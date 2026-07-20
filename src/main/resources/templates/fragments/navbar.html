@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark site-navbar" style="background: #087a7d !important; opacity: 1 !important;" th:fragment="navbar">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}">GECM Lost &amp; Found</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" th:href="@{/browse}">Browse</a></li>
+                <li class="nav-item" th:if="${currentUser != null}">
+                    <a class="nav-link" th:href="@{/dashboard}">My Dashboard</a>
+                </li>
+                <li class="nav-item" th:if="${currentUser != null and currentUser.admin}">
+                    <a class="nav-link" th:href="@{/admin}">Admin</a>
+                </li>
+                <li class="nav-item" th:if="${currentUser != null and currentUser.admin}">
+                    <a class="nav-link" th:href="@{/admin(view='claims')}">Claims</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item" th:if="${currentUser != null}">
+                    <span class="navbar-text me-2" th:text="'Hello, ' + ${currentUser.name}">Hello</span>
+                </li>
+                <li class="nav-item" th:if="${currentUser != null}">
+                    <a class="btn btn-sm btn-light" th:href="@{/logout}">Logout</a>
+                </li>
+                <li class="nav-item" th:if="${currentUser == null}">
+                    <a class="nav-link" th:href="@{/login}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

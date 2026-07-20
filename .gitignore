@@ -1,0 +1,25 @@
+/target/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+uploads/*
+!uploads/.htaccess
+
+# Maven build output
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Uploaded files (optional)
+uploads/
+
+# OS-generated files
+.DS_Store
+Thumbs.db

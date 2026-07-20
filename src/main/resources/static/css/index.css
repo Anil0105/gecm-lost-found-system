@@ -1,0 +1,57 @@
+/* Styles used only by the GECM Lost & Found home page. */
+.home-page {
+    min-height: 100vh;
+    background: #f4f9f8;
+}
+
+.home-main {
+    min-height: calc(100vh - 56px);
+    padding: 1rem 0 3rem;
+    background:
+        radial-gradient(circle at 9% 10%, rgba(31, 135, 128, .15), transparent 26rem),
+        radial-gradient(circle at 94% 36%, rgba(244, 181, 76, .16), transparent 25rem),
+        linear-gradient(180deg, #eaf6f4 0, #f9fcfb 35rem, #f4f9f8 100%);
+}
+
+.home-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 5.5rem 2rem;
+    border-radius: 1.5rem;
+    color: #fff;
+    background: linear-gradient(130deg, #064e55, #087a7d 64%, #12928b);
+    box-shadow: 0 1.25rem 2.5rem rgba(6, 78, 85, .2);
+}
+
+.home-hero::before,
+.home-hero::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 50%;
+}
+
+.home-hero::before { width: 32rem; height: 32rem; top: -22rem; left: -10rem; }
+.home-hero::after { width: 26rem; height: 26rem; right: -11rem; bottom: -18rem; }
+.home-hero > * { position: relative; z-index: 1; }
+.home-kicker { display: inline-block; margin-bottom: 1rem; padding: .45rem .75rem; border-radius: 99px; color: #daf8f1; background: rgba(255, 255, 255, .13); font-size: .72rem; font-weight: 700; letter-spacing: .14em; }
+.home-hero .display-5 { max-width: 800px; margin: 0 auto; font-size: clamp(2.3rem, 5vw, 4rem); font-weight: 750; letter-spacing: -.03em; }
+.home-hero .lead { max-width: 620px; margin: 1.2rem auto 0; color: #d9f1ee; font-size: 1.15rem; }
+.home-hero .btn { min-width: 138px; padding: .75rem 1rem; border-width: 0; font-weight: 700; }
+.home-hero .btn-primary { color: #075d61; background: #fff; }
+.home-hero .btn-primary:hover { color: #064e55; background: #e8fffb; }
+.home-hero .btn-outline-primary { color: #fff; border: 1px solid rgba(255,255,255,.7); background: transparent; }
+.home-hero .btn-outline-primary:hover { color: #075d61; background: #fff; }
+.home-hero .btn-outline-secondary { color: #e9fbf8; border: 1px solid rgba(255,255,255,.4); background: rgba(0,0,0,.08); }
+.home-hero .btn-outline-secondary:hover { color: #075d61; background: #fff; }
+.home-divider { height: 1px; border: 0; opacity: 1; background: linear-gradient(90deg, transparent, #b9d8d3, transparent); }
+.home-content .card { border: 1px solid #dcebe8; background: rgba(255,255,255,.94); box-shadow: 0 .55rem 1.4rem rgba(28, 92, 88, .07); }
+.home-content .card-title { color: #0b686b; }
+.home-content .alert-info { border: 0; color: #1a6264; background: #dff2ef; }
+
+@media (max-width: 767.98px) {
+    .home-main { padding-top: .25rem; }
+    .home-hero { padding: 3.5rem 1.25rem; border-radius: 1rem; }
+    .home-hero .lead { font-size: 1.02rem; }
+    .home-hero .btn { width: 100%; margin: 0 0 .65rem !important; }
+}

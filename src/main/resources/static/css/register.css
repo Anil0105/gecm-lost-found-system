@@ -1,0 +1,251 @@
+/* Styles used only by the GECM Lost & Found signup page.
+.register-page { min-height: 100vh; background: #edf5f4; }
+.register-shell { min-height: calc(100vh - 56px); display: flex; align-items: center; padding: 3rem 0; background: radial-gradient(circle at 13% 20%, rgba(61, 148, 137, .18), transparent 26rem), radial-gradient(circle at 91% 87%, rgba(239, 177, 85, .22), transparent 23rem), #f7fbfa; }
+.register-card { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 615px; overflow: hidden; border-radius: 1.5rem; background: #fff; box-shadow: 0 1.5rem 4rem rgba(19, 58, 68, .16); }
+.register-story { position: relative; display: flex; align-items: flex-end; padding: 3rem; overflow: hidden; color: #fff; background: linear-gradient(145deg, #064e55, #0b7378); }.register-story::before, .register-story::after { content: ""; position: absolute; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; }.register-story::before { width: 28rem; height: 28rem; top: -13rem; right: -10rem; }.register-story::after { width: 18rem; height: 18rem; bottom: -10rem; left: -8rem; }.register-story-content { position: relative; z-index: 1; max-width: 395px; }.register-badge { display: inline-block; padding: .45rem .7rem; border-radius: 99px; color: #d9faf3; background: rgba(255,255,255,.13); font-size: .72rem; font-weight: 700; letter-spacing: .14em; }.register-story h1 { margin: 1.1rem 0 .9rem; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.08; font-weight: 700; }.register-story p { color: #d6eeeb; font-size: 1.05rem; }.register-benefit { display: flex; gap: .7rem; align-items: center; margin-top: 1rem; color: #e9f8f6; }.register-benefit span { display: grid; width: 1.8rem; height: 1.8rem; place-items: center; border-radius: 50%; color: #d9faf3; background: rgba(255,255,255,.14); }
+.register-form-panel { display: flex; align-items: center; padding: 3rem; }.register-form-content { width: 100%; max-width: 360px; margin: auto; }.register-heading { display: flex; align-items: center; gap: .85rem; }.register-mark { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; border-radius: .8rem; color: #fff; font-weight: 800; background: #087a7d; }.register-eyebrow { margin: 0 0 .25rem; color: #087a7d; font-size: .72rem; font-weight: 700; letter-spacing: .14em; }.register-heading h2 { margin: 0; color: #183d42; font-size: 1.45rem; font-weight: 700; }.register-subtitle { margin: 1.6rem 0; color: #6a7d80; }.register-page .form-label { margin-bottom: .45rem; color: #34565a; font-size: .9rem; font-weight: 600; }.register-page .form-control { padding: .75rem .9rem; border-color: #d7e4e3; }.register-page .form-control:focus { border-color: #0b8586; box-shadow: 0 0 0 .2rem rgba(11,133,134,.13); }.register-submit { padding: .78rem; border: 0; font-weight: 700; background: #087a7d; box-shadow: 0 .55rem 1.2rem rgba(8,122,125,.23); }.register-submit:hover, .register-submit:focus { background: #066669; }.register-submit span { margin-left: .35rem; font-size: 1.15rem; }.login-note { margin: 1.35rem 0 0; text-align: center; color: #718083; font-size: .92rem; }.login-note a { color: #087a7d; font-weight: 700; text-decoration: none; }.login-note a:hover { text-decoration: underline; }
+@media (max-width: 767.98px) { .register-shell { display: block; padding: 1.25rem 0; }.register-card { grid-template-columns: 1fr; min-height: auto; border-radius: 1rem; }.register-story { min-height: 255px; padding: 2rem; }.register-story h1 { font-size: 2rem; }.register-story p { margin-bottom: 0; }.register-benefit { display: none; }.register-form-panel { padding: 2rem 1.5rem; } }
+*/
+
+/* Styles used only by the GECM Lost & Found signup page */
+
+.register-page {
+    min-height: 100vh;
+    background: #edf5f4;
+}
+
+.register-shell {
+    min-height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    padding: 3rem 0;
+    background:
+            radial-gradient(circle at 13% 20%, rgba(61, 148, 137, 0.18), transparent 26rem),
+            radial-gradient(circle at 91% 87%, rgba(239, 177, 85, 0.22), transparent 23rem),
+            #f7fbfa;
+}
+
+.register-card {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    min-height: 615px;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: 0 1.5rem 4rem rgba(19, 58, 68, 0.16);
+}
+
+.register-story {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 3rem;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(145deg, #064e55, #0b7378);
+}
+
+.register-story::before,
+.register-story::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.register-story::before {
+    width: 28rem;
+    height: 28rem;
+    top: -13rem;
+    right: -10rem;
+}
+
+.register-story::after {
+    width: 18rem;
+    height: 18rem;
+    bottom: -10rem;
+    left: -8rem;
+}
+
+.register-story-content {
+    position: relative;
+    z-index: 1;
+    max-width: 395px;
+}
+
+.register-badge {
+    display: inline-block;
+    padding: 0.45rem 0.7rem;
+    border-radius: 99px;
+    color: #d9faf3;
+    background: rgba(255, 255, 255, 0.13);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.register-story h1 {
+    margin: 1.1rem 0 0.9rem;
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1.08;
+    font-weight: 700;
+}
+
+.register-story p {
+    color: #d6eeeb;
+    font-size: 1.05rem;
+}
+
+.register-benefit {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    margin-top: 1rem;
+    color: #e9f8f6;
+}
+
+.register-benefit span {
+    display: grid;
+    width: 1.8rem;
+    height: 1.8rem;
+    place-items: center;
+    border-radius: 50%;
+    color: #d9faf3;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.register-form-panel {
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+}
+
+.register-form-content {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+}
+
+.register-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.register-mark {
+    display: grid;
+    width: 2.8rem;
+    height: 2.8rem;
+    place-items: center;
+    border-radius: 0.8rem;
+    color: #fff;
+    font-weight: 800;
+    background: #087a7d;
+}
+
+.register-eyebrow {
+    margin: 0 0 0.25rem;
+    color: #087a7d;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.register-heading h2 {
+    margin: 0;
+    color: #183d42;
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+
+.register-subtitle {
+    margin: 1.6rem 0;
+    color: #6a7d80;
+}
+
+.register-page .form-label {
+    margin-bottom: 0.45rem;
+    color: #34565a;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.register-page .form-control {
+    padding: 0.75rem 0.9rem;
+    border-color: #d7e4e3;
+}
+
+.register-page .form-control:focus {
+    border-color: #0b8586;
+    box-shadow: 0 0 0 0.2rem rgba(11, 133, 134, 0.13);
+}
+
+.register-submit {
+    padding: 0.78rem;
+    border: 0;
+    font-weight: 700;
+    background: #087a7d;
+    box-shadow: 0 0.55rem 1.2rem rgba(8, 122, 125, 0.23);
+}
+
+.register-submit:hover,
+.register-submit:focus {
+    background: #066669;
+}
+
+.register-submit span {
+    margin-left: 0.35rem;
+    font-size: 1.15rem;
+}
+
+.login-note {
+    margin: 1.35rem 0 0;
+    text-align: center;
+    color: #718083;
+    font-size: 0.92rem;
+}
+
+.login-note a {
+    color: #087a7d;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.login-note a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 767.98px) {
+
+    .register-shell {
+        display: block;
+        padding: 1.25rem 0;
+    }
+
+    .register-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        border-radius: 1rem;
+    }
+
+    .register-story {
+        min-height: 255px;
+        padding: 2rem;
+    }
+
+    .register-story h1 {
+        font-size: 2rem;
+    }
+
+    .register-story p {
+        margin-bottom: 0;
+    }
+
+    .register-benefit {
+        display: none;
+    }
+
+    .register-form-panel {
+        padding: 2rem 1.5rem;
+    }
+}

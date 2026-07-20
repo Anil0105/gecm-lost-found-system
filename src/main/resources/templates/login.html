@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link th:href="@{/css/login.css}" rel="stylesheet">
+</head>
+<body class="login-page">
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<main class="login-shell">
+    <div class="container">
+        <div class="login-card">
+            <section class="login-story">
+                <div class="story-content">
+                    <span class="story-badge">GECM COMMUNITY</span>
+                    <h1>Lost things deserve a way back.</h1>
+                    <p>One place for the GECM community to reconnect with what matters.</p>
+                    <div class="story-item">
+                        <span class="story-icon">⌕</span>
+                        <span>Search items reported across campus</span>
+                    </div>
+                    <div class="story-item">
+                        <span class="story-icon">↗</span>
+                        <span>Help return something to its owner</span>
+                    </div>
+                </div>
+            </section>
+            <section class="login-form-panel">
+                <div class="login-form-content">
+                    <div class="login-heading">
+                        <span class="login-mark">LF</span>
+                        <div>
+                            <p class="eyebrow" th:text="${isAdmin} ? 'ADMIN PORTAL' : 'WELCOME BACK'">WELCOME BACK</p>
+                            <h2 th:text="${isAdmin} ? 'Admin Login' : 'Sign in to your account'">Sign in to your account</h2>
+                        </div>
+                    </div>
+                    <p class="login-subtitle" th:text="${isAdmin} ? 'Manage reports and claims securely.' : 'Report, search, and reunite lost items.'">Report, search, and reunite lost items.</p>
+                    <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+                    <form method="post" th:action="@{/login}">
+                        <input type="hidden" name="admin" th:if="${isAdmin}" value="1">
+                        <label class="form-label" for="email">Email address</label>
+                        <input id="email" class="form-control" name="email" type="email"
+                               th:placeholder="${isAdmin} ? 'Admin email' : 'name@gmail.com'" required>
+                        <label class="form-label mt-3" for="password">Password</label>
+                        <input id="password" class="form-control" name="password" type="password" placeholder="Enter your password" required>
+                        <button class="btn btn-primary login-submit w-100 mt-4" type="submit">Login <span>→</span></button>
+                        <p class="register-note" th:if="${!isAdmin}">New to Lost &amp; Found? <a th:href="@{/register}">Create an account</a></p>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>GEC Modasa Lost &amp; Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link th:href="@{/css/index.css}" rel="stylesheet">
+</head>
+<body class="home-page">
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<main class="home-main">
+<div class="container page-section">
+    <section class="home-hero text-center">
+        <span class="home-kicker">GEC MODASA COMMUNITY</span>
+        <h1 class="display-5">GEC Modasa Lost &amp; Found</h1>
+        <p class="lead">A shared campus space to report, discover, and return the things that matter.</p>
+        <div class="mt-4 hero-actions">
+            <a th:href="@{/browse}" class="btn btn-primary me-2">Search Items</a>
+            <th:block th:if="${currentUser == null}">
+                <a th:href="@{/register}" class="btn btn-outline-primary me-2">Sign Up</a>
+                <a th:href="@{/login}" class="btn btn-outline-secondary">Login</a>
+            </th:block>
+            <th:block th:if="${currentUser != null}">
+                <a th:if="${currentUser.admin}" th:href="@{/admin}" class="btn btn-warning">Admin Dashboard</a>
+                <a th:if="${!currentUser.admin}" th:href="@{/dashboard}" class="btn btn-success">My Dashboard</a>
+            </th:block>
+        </div>
+    </section>
+
+    <hr class="home-divider my-5">
+
+    <div class="row home-content">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">How it works</h5>
+                    <p class="card-text">Post found items, or report lost items. Admin approves before public listing.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div th:if="${#lists.isEmpty(recentItems)}" class="alert alert-info">No approved items yet.</div>
+            <div th:if="${!#lists.isEmpty(recentItems)}" class="row row-cols-1 row-cols-md-2 g-3">
+                <div class="col" th:each="item : ${recentItems}">
+                    <div class="card h-100">
+                        <img th:if="${item.image != null}" th:src="@{'/uploads/' + ${item.image}}"
+                             class="card-img-top" style="height:180px;object-fit:cover" alt="Item image">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <span th:text="${item.title}">Title</span>
+                                <small class="text-muted" th:text="${#strings.capitalize(item.type.name())}">Type</small>
+                            </h5>
+                            <p class="card-text" th:text="${item.description}">Description</p>
+                            <p class="text-muted small">
+                                <span th:text="${item.type.name() == 'lost' ? 'Lost at' : 'Found at'}">Location label</span>:
+                                <span th:text="${item.location}">Location</span>
+                                &mdash; by <span th:text="${item.addedName}">User</span>
+                            </p>
+                            <a th:href="@{/item/{id}(id=${item.id})}" class="btn btn-sm btn-outline-primary mt-2">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

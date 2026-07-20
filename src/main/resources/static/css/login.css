@@ -1,0 +1,80 @@
+/* Styles used only by the GECM Lost & Found login screen. */
+.login-page {
+    min-height: 100vh;
+    background: #edf5f4;
+}
+
+.login-shell {
+    min-height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    padding: 3rem 0;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(62, 149, 138, .2), transparent 27rem),
+        radial-gradient(circle at 90% 85%, rgba(243, 183, 88, .22), transparent 24rem),
+        #f7fbfa;
+}
+
+.login-card {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    min-height: 560px;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: 0 1.5rem 4rem rgba(19, 58, 68, .16);
+}
+
+.login-story {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 3rem;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(145deg, #064e55, #0b7378);
+}
+
+.login-story::before,
+.login-story::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 50%;
+}
+
+.login-story::before { width: 28rem; height: 28rem; top: -13rem; right: -10rem; }
+.login-story::after { width: 18rem; height: 18rem; bottom: -10rem; left: -8rem; }
+.story-content { position: relative; z-index: 1; max-width: 390px; }
+.story-badge, .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .14em; }
+.story-badge { display: inline-block; padding: .45rem .7rem; border-radius: 99px; color: #d9faf3; background: rgba(255,255,255,.13); }
+.login-story h1 { margin: 1.1rem 0 .9rem; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.08; font-weight: 700; }
+.login-story p { color: #d6eeeb; font-size: 1.05rem; }
+.story-item { display: flex; gap: .7rem; align-items: center; margin-top: 1rem; color: #e9f8f6; }
+.story-icon { display: grid; width: 2rem; height: 2rem; place-items: center; border-radius: 50%; font-size: 1.2rem; background: rgba(255,255,255,.14); }
+.login-form-panel { display: flex; align-items: center; padding: 3rem; }
+.login-form-content { width: 100%; max-width: 360px; margin: auto; }
+.login-heading { display: flex; align-items: center; gap: .85rem; }
+.login-mark { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; border-radius: .8rem; color: #fff; font-weight: 800; background: #087a7d; }
+.eyebrow { margin: 0 0 .25rem; color: #087a7d; }
+.login-heading h2 { margin: 0; color: #183d42; font-size: 1.45rem; font-weight: 700; }
+.login-subtitle { margin: 1.6rem 0; color: #6a7d80; }
+.login-page .form-label { margin-bottom: .45rem; color: #34565a; font-size: .9rem; font-weight: 600; }
+.login-page .form-control { padding: .75rem .9rem; border-color: #d7e4e3; }
+.login-page .form-control:focus { border-color: #0b8586; box-shadow: 0 0 0 .2rem rgba(11,133,134,.13); }
+.login-submit { padding: .78rem; border: 0; font-weight: 700; background: #087a7d; box-shadow: 0 .55rem 1.2rem rgba(8,122,125,.23); }
+.login-submit:hover, .login-submit:focus { background: #066669; }
+.login-submit span { margin-left: .35rem; font-size: 1.15rem; }
+.register-note { margin: 1.35rem 0 0; text-align: center; color: #718083; font-size: .92rem; }
+.register-note a { color: #087a7d; font-weight: 700; text-decoration: none; }
+.register-note a:hover { text-decoration: underline; }
+
+@media (max-width: 767.98px) {
+    .login-shell { display: block; padding: 1.25rem 0; }
+    .login-card { grid-template-columns: 1fr; min-height: auto; border-radius: 1rem; }
+    .login-story { min-height: 255px; padding: 2rem; }
+    .login-story h1 { font-size: 2rem; }
+    .login-story p { margin-bottom: 0; }
+    .story-item { display: none; }
+    .login-form-panel { padding: 2rem 1.5rem; }
+}
